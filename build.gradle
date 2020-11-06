@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'com.prep.TrueCallerApplication')
+    }
+}
+
+group 'com.prep.truecaller'
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 15
+targetCompatibility = 15
+
+repositories {
+    jcenter()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation('com.baqend:bloom-filter:2.0.0')
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+
+    implementation("com.google.guava:guava:29.0-jre")
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.6.0'
+}

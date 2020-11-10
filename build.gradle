@@ -4,11 +4,13 @@ plugins {
 
 jar {
     manifest {
-        attributes('Main-Class': 'com.prep.TrueCallerApplication')
+        attributes(
+            'Main-Class': 'TrueCallerApplication'
+        )
     }
 }
 
-group 'com.prep.truecaller'
+group 'truecaller'
 
 version '1.0-SNAPSHOT'
 
